@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма регистрации</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- заглушка из предыдущего семестра -->
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <div class="header__logo">
+                    <h1>Мой сайт</h1>
+                </div>
+                <nav class="header__nav">
+                    <ul class="header__menu">
+                        <li><a href="#">Главная</a></li>
+                        <li><a href="#">О нас</a></li>
+                        <li><a href="#">Услуги</a></li>
+                        <li><a href="#">Контакты</a></li>
+                    </ul>
+                </nav>
+                <!-- регистрация -->
+                <button class="header__register-btn" id="openModal">Регистрация</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <h2>Добро пожаловать на наш сайт!</h2>
+            <p>Это основное содержимое страницы.</p>
+        </div>
+    </main>
+
+    <!-- окно регистрации -->
+    <dialog id="registerDialog" class="register-dialog">
+        <div class="register-dialog__content">
+            <h2 class="register-dialog__title">Регистрация</h2>
+            
+            <!-- novalidate для отключения стандартной валидации браузера -->
+            <form id="registerForm" class="register-form" novalidate>
+                <!-- имя -->
+                <div class="form-group">
+                    <label for="name">Имя (обязательно)</label>
+                    <input 
+                        type="text" 
+                        id="name" 
+                        name="name" 
+                        required
+                        aria-describedby="nameError">
+                    <div id="nameError" class="error-message" hidden></div>
+                </div>
+                
+                <!-- email -->
+                <div class="form-group">
+                    <label for="email">Email (обязательно)</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        required
+                        aria-describedby="emailError">
+                    <div id="emailError" class="error-message" hidden></div>
+                </div>
+                
+                <!-- пароль -->
+                <div class="form-group">
+                    <label for="password">Пароль (обязательно, минимум 6 символов)</label>
+                    <div class="password-container">
+                        <input 
+                            type="password" 
+                            id="password" 
+                            name="password" 
+                            required 
+                            minlength="6"
+                            aria-describedby="passwordError">
+                        <button type="button" id="showPassword" class="show-password-btn">
+                            Показать
+                        </button>
+                    </div>
+                    <div id="passwordError" class="error-message" hidden></div>
+                </div>
+                
+                <!-- кнопки -->
+                <div class="form-buttons">
+                    <button type="submit" class="submit-btn">Зарегистрироваться</button>
+                    <button type="button" class="close-btn" id="closeDialog">Закрыть</button>
+                </div>
+            </form>
+        </div>
+    </dialog>
+
+    <script src="script.js"></script>
+</body>
+</html>

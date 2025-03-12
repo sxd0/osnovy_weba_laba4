@@ -1,0 +1,210 @@
+/* старт */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* шапка */
+.header {
+    background-color: #333;
+    color: #fff;
+    padding: 15px 0;
+}
+
+.header__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__menu {
+    display: flex;
+    list-style: none;
+}
+
+.header__menu li {
+    margin-left: 20px;
+}
+
+.header__menu a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.header__register-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.header__register-btn:hover {
+    background-color: #45a049;
+}
+
+.main {
+    padding: 30px 0;
+}
+
+/* окно */
+.register-dialog {
+    max-width: 500px;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.register-dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.register-dialog__title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* формы */
+.register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+/* валидные/невалидные поля */
+.form-group input:user-valid {
+    border-color: #4CAF50;
+    background-color: rgba(76, 175, 80, 0.05);
+}
+
+.form-group input:user-invalid {
+    border-color: #f44336;
+    background-color: rgba(244, 67, 54, 0.05);
+}
+
+/* поля с атрибутом aria-invalid=true */
+.form-group input[aria-invalid="true"] {
+    border-color: #f44336;
+    background-color: rgba(244, 67, 54, 0.05);
+}
+
+/* паролт и кнопка показа */
+.password-container {
+    display: flex;
+}
+
+.password-container input {
+    flex: 1;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.show-password-btn {
+    padding: 0 15px;
+    background-color: #e7e7e7;
+    border: 1px solid #ccc;
+    border-left: none;
+    cursor: pointer;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.show-password-btn:hover {
+    background-color: #d7d7d7;
+}
+
+/* сообщения об ошибке */
+.error-message {
+    color: #f44336;
+    font-size: 14px;
+    margin-top: 5px;
+    min-height: 20px;
+}
+
+/* кнопки формы */
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.submit-btn, .close-btn {
+    padding: 10px 15px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.submit-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.submit-btn:hover {
+    background-color: #45a049;
+}
+
+.close-btn {
+    background-color: #f44336;
+    color: white;
+}
+
+.close-btn:hover {
+    background-color: #d32f2f;
+}
+
+
+
+
+input:user-valid {
+    border-color: green;
+}
+
+input:user-invalid {
+    border-color: red;
+}
+
+.input-error {
+    border: 2px solid red;
+    background-color: #ffe6e6;
+}
+
+.label-error {
+    color: red;
+}
